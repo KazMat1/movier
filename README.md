@@ -24,27 +24,27 @@ To get started with this project, follow these steps:
 0. **Prerequisites**
 
 ```bash
-   brew install make
+brew install make
 ```
 
 1. **Clone the repository**:
 
-   ```bash
-   git clone <repository-url>
-   cd movier
-   ```
+```bash
+git clone <repository-url>
+cd movier
+```
 
 2. **Build environment**:
 
-   ```bash
-   make project-init
-   ```
+```bash
+make project-init
+```
 
 3. **Build and run the application using Docker**:
 
-   ```bash
-   make upd
-   ```
+```bash
+make upd
+```
 
 4. **Access the API**:
    Once the application is running, you can access the API at `http://localhost:8000`.
