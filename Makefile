@@ -19,15 +19,10 @@ project-init:
 
 # NOTE: Author のみ n. それ以外はenter
 poetry-init:
-	docker-compose run \
-	--entrypoint "poetry init \
-		--name api \
-		--dependency fastapi \
-		--dependency uvicorn[standard]" \
-	api
+	docker compose run --rm api poetry init --name api --dependency fastapi --dependency uvicorn[standard]
 # NOTE: 動かないかも
 poetry-install:
-	docker-compose run --entrypoint "poetry install --no-root" api
+	docker compose run --rm api poetry install --no-root
 poetry-add:
 	docker-compose exec api poetry add $(wordlist 2, $(words $(MAKECMDGOALS) - 2), $(MAKECMDGOALS))
 poetry-add-dev:
