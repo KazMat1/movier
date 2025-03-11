@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/src
+    environment:
+      - PYTHONUNBUFFERED=1
+    command: ["poetry", "run", "uvicorn", "api.main:app", "--host", "0.0.0.0", "--reload"]
